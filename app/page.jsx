@@ -13,9 +13,9 @@ export default function Home() {
 
       <ThemeToggle />
 
-      <div className="relative z-10 flex flex-col justify-center items-center py-10 px-4 min-h-screen">
+      <div className="relative z-10 flex flex-col justify-center items-center py-6 px-4 min-h-screen">
         {/* Header */}
-        <div className="mb-12 text-center animate-float">
+        <div className="mb-8 text-center animate-float">
           <div className="inline-block mb-4 p-4 bg-white/20 dark:bg-black/20 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/30 dark:border-gray-700">
             <span className="text-6xl">📬</span>
           </div>
@@ -41,7 +41,7 @@ export default function Home() {
         <UnifiedEmailForm />
 
         {/* Footer */}
-        <footer className="mt-12 text-center">
+        <footer className="mt-8 text-center">
           <div className="inline-flex items-center gap-4 px-6 py-3 bg-white/40 dark:bg-black/20 backdrop-blur-sm rounded-full border border-gray-200/50 dark:border-gray-700/50">
             <span className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">
               Powered by

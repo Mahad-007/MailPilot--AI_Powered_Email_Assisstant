@@ -161,7 +161,7 @@ export default function UnifiedEmailForm() {
                 name="body"
                 placeholder="Type your message here..."
                 required={!showAIPrompt}
-                className="w-full px-4 py-3.5 bg-white/50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-xl h-48 focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 focus:border-transparent transition-all duration-300 resize-none text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+                className="w-full px-4 py-3.5 bg-white/50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-xl h-32 focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 focus:border-transparent transition-all duration-300 resize-y text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
               />
             </div>
           )}
@@ -202,7 +202,7 @@ export default function UnifiedEmailForm() {
                     name="aiPrompt"
                     placeholder="Describe what you want the email to say... (e.g., 'Write a professional thank you email for the meeting')"
                     required={showAIPrompt}
-                    className="w-full pl-12 pr-4 py-3.5 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border-2 border-purple-300 dark:border-purple-700 rounded-xl h-48 focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 focus:border-transparent transition-all duration-300 resize-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                    className="w-full pl-12 pr-4 py-3.5 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border-2 border-purple-300 dark:border-purple-700 rounded-xl h-32 focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 focus:border-transparent transition-all duration-300 resize-y text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                   />
                 </div>
               </div>
@@ -316,7 +316,7 @@ export default function UnifiedEmailForm() {
             <textarea
               value={editedContent}
               onChange={(e) => setEditedContent(e.target.value)}
-              className="w-full px-4 py-3.5 bg-white dark:bg-gray-800 border border-purple-200 dark:border-purple-700 rounded-lg h-64 focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 focus:border-transparent transition-all duration-300 resize-none text-gray-900 dark:text-white"
+              className="w-full px-4 py-3.5 bg-white dark:bg-gray-800 border border-purple-200 dark:border-purple-700 rounded-lg h-48 focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 focus:border-transparent transition-all duration-300 resize-y text-gray-900 dark:text-white"
               placeholder="Edit your AI-generated email..."
             />
 
