@@ -1,16 +1,15 @@
 "use server";
 
+import { sendEmailViaMCP } from "../../lib/mcp-handler.js";
+
 export async function sendEmail(data) {
   try {
-    const response = await fetch("http://localhost:3000/api/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
+    const result = await sendEmailViaMCP({
+      to: data.to,
+      subject: data.subject,
+      body: data.body
     });
-
-    const result = await response.json();
+    
     return result;
   } catch (error) {
     console.error("Error sending email:", error);

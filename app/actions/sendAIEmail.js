@@ -1,17 +1,23 @@
 "use server";
 
+import { generateEmailWithGemini, sendEmailViaMCP } from "../../lib/mcp-handler.js";
+
 export async function sendAIEmail(data) {
   try {
-    const response = await fetch("http://localhost:3000/api/send-ai-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
+    // Generate email content with AI
+    const generatedBody = await generateEmailWithGemini(data.prompt);
+    
+    // Send the generated email
+    const sendResult = await sendEmailViaMCP({
+      to: data.to,
+      subject: data.subject,
+      body: generatedBody
     });
 
-    const result = await response.json();
-    return result;
+    return {
+      ...sendResult,
+      generatedBody: generatedBody
+    };
   } catch (error) {
     console.error("Error sending AI email:", error);
     return {
