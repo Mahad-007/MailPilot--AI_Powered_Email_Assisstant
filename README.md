@@ -35,11 +35,16 @@ npm install
 
 ### 2. Configure Environment Variables
 
-Create a `.env.local` file:
+Create a `.env.local` file in the project root:
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key_here
+ZAPIER_MCP_URL=your_zapier_mcp_url_here
 ```
+
+**Getting Your Keys:**
+- **GEMINI_API_KEY**: Get it from [Google AI Studio](https://makersuite.google.com/app/apikey)
+- **ZAPIER_MCP_URL**: Get it from [Zapier MCP](https://mcp.zapier.com) after connecting Gmail
 
 ### 3. Set Up MCP Gmail Connection
 
@@ -124,13 +129,39 @@ client.callTool("mcp_Zapier_gmail_send_email", {
 });
 ```
 
+## 🚀 Production Deployment
+
+Ready to deploy to production? See our comprehensive [Production Deployment Guide](./PRODUCTION_DEPLOYMENT.md) for detailed instructions on deploying to Vercel.
+
+### Quick Deploy to Vercel
+
+1. **Push your code to Git** (GitHub, GitLab, or Bitbucket)
+
+2. **Import to Vercel**
+   - Visit [vercel.com/new](https://vercel.com/new)
+   - Import your repository
+   - Framework: Next.js (auto-detected)
+
+3. **Add Environment Variables**
+   ```
+   GEMINI_API_KEY=your_actual_gemini_api_key
+   ZAPIER_MCP_URL=your_actual_zapier_mcp_url
+   ```
+
+4. **Deploy**
+   - Click Deploy and wait 2-3 minutes
+   - Your app will be live at `https://your-project.vercel.app`
+
+For detailed instructions, troubleshooting, and best practices, see [PRODUCTION_DEPLOYMENT.md](./PRODUCTION_DEPLOYMENT.md).
+
 ## 🐛 Troubleshooting
 
 ### Email Not Sending
 
-- Verify your MCP server is running
+- Verify your MCP server is running (development only)
 - Check Gmail is properly connected in Zapier
 - Ensure you have proper authentication
+- Verify `ZAPIER_MCP_URL` environment variable is set correctly
 
 ### AI Generation Failed
 
@@ -145,6 +176,12 @@ client.callTool("mcp_Zapier_gmail_send_email", {
 rm -rf .next
 npm run dev
 ```
+
+### Environment Variables Not Loading
+
+- Make sure `.env.local` exists in project root
+- Restart the development server after adding new variables
+- Check for typos in variable names
 
 ## 🤝 Contributing
 
